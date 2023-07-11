@@ -14,7 +14,7 @@ msgContainer.onsubmit = async function (e) {
   <div class="chat-content">${txt}</div>
   <div class="chat-date">${getTime()}</div>
 </div>`
-  chatContainer.innerText += html1
+  chatContainer.innerHTML += html1
   let a = await sendChat(txt)
 
   if (a.code === 0) {
@@ -25,7 +25,7 @@ msgContainer.onsubmit = async function (e) {
     <div class="chat-date">${getTime(text.createdAt)}</div>
   </div>
     `
-    chatContainer.innerText += html2
+    chatContainer.innerHTML += html2
   }
 }
 
@@ -52,7 +52,7 @@ function getTime(val = new Date()) {
     <div class="chat-date">${getTime(ele.createdAt)}</div>
   </div>`
   })
-  chatContainer.innerText += html3
+  chatContainer.innerHTML += html3
 })()
 let close = document.querySelector('.close')
 close.onclick = () => {
